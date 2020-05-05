@@ -24,6 +24,7 @@ const numTeams = (ratings) => {
 
   return counter;
 };
+
 /**
  * The n^2 brute force solution
  * @param {number[]} ratings
@@ -46,7 +47,7 @@ const noOfTeams = (ratings) => {
 
   for (let i = 0; i < lessArray.length; i++) {
     const j = lessArray[i];
-    for (let k = j + 1; k < ratings.length && j > 0; k++) {
+    for (let k = j + 1; k < ratings.length; k++) {
       if (ratings[j] < ratings[k]) {
         counter++;
       }
@@ -55,7 +56,7 @@ const noOfTeams = (ratings) => {
 
   for (let i = 0; i < moreArray.length; i++) {
     const j = moreArray[i];
-    for (let k = j + 1; k < ratings.length && j > 0; k++) {
+    for (let k = j + 1; k < ratings.length; k++) {
       if (ratings[j] > ratings[k]) {
         counter++;
       }
